@@ -49,12 +49,12 @@ namespace SampleMicrosoftBOT
         public void ConfigurateState(IServiceCollection services)
         {
 
-            var saConnectionString = "";
-            var containerName = "BotData";
+           // var saConnectionString = "";
+            //var containerName = "botdata";
 
-            services.AddSingleton<IStorage>(new BlobsStorage(saConnectionString, containerName));
+            //services.AddSingleton<IStorage>(new BlobsStorage(saConnectionString, containerName));
 
-            //services.AddSingleton<IStorage, MemoryStorage>(); (used for inmemory)
+            services.AddSingleton<IStorage, MemoryStorage>(); //(used for inmemory)
 
             services.AddSingleton<UserState>();
 
